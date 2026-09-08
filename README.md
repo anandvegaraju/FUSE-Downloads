@@ -1,40 +1,43 @@
-# FUSE SQL Studio — Windows preview
+# FUSE SQL Studio — Windows testing previews
 
-**RC17 · Windows 11 x64 · Free testing preview · UNSIGNED**
+**Latest app updates: RC18 browser portable · Windows 11 x64 · UNSIGNED TEST PREVIEW**
 
-Try the existing RC17 Windows build and help check the developer experience. This is an evaluation preview, not a stable release or a Microsoft Store-certified download. These downloads are publicly accessible without a GitHub account; the FUSE source repository remains private. This repository contains download information only, not the application source or its Git history.
+RC18 is assembled on macOS and awaits Windows 11 testing. It is not a stable, certified or Microsoft Store release. Downloads are accessible without a GitHub account; FUSE source remains private. This repository contains download information only, not FUSE source or its Git history.
 
-## Choose your download
+## Updated download — RC18
+
+**[Download RC18 browser-portable ZIP · 39.9 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.18-preview/FUSE-1.0.0-rc.18-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip)**
+
+Extract the entire ZIP into a writable folder and double-click **Start FUSE.cmd**. The Windows runtime is included; no separate Node.js installation is needed. Keep the console open. Wait for **Workspace saved**, close the app window, then close the console.
+
+This preview contains persistent queries/drafts/connection profiles/preferences, Windows account-bound password protection, Edge/Chrome app-window launch, FUSE branding, row caps up to 10,000, stable alphabetical schema browsing and an optional schema-only coding-agent companion. Existing lower row caps are preserved; raise both workspace and connection caps if still limited to 500.
+
+**These new Windows behaviors await your test.** The updated app passed Mac-side automated tests, isolated workspace restart and packaged gateway/MCP checks. The bundled Windows Node runtime is unchanged from checksum-verified RC17; this does not sign FUSE or establish RC18 Windows acceptance. RC17 browser-session work already lost cannot be recovered.
+
+[RC18 release notes](https://github.com/anandvegaraju/FUSE-Downloads/releases/tag/v1.0.0-rc.18-preview) · [Windows 11 checklist](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.18-preview/WINDOWS-11-TEST-CHECKLIST.md) · [RC18 checksum](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.18-preview/SHA256SUMS.txt)
+
+## Older native downloads — RC17, without the RC18 updates
+
+There is **no RC18 native installer, native portable or MSIX yet**. These separate RC17 previews remain available for older-build testing; do not use them to verify RC18 changes.
 
 | Package | Download | Start and storage |
 |---|---|---|
-| **Native portable — no installer** | [Download unsigned portable ZIP · 9.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-native-portable-UNSIGNED-PREVIEW.zip) | Extract the entire ZIP to a writable folder; open `FUSE.exe`. Requires Microsoft Edge WebView2 Runtime. Saves the workspace in your Windows user profile and passwords in Windows Credential Manager, **not beside the EXE**. |
-| **Desktop installer** | [Download unsigned EXE installer · 7.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-setup-UNSIGNED-PREVIEW.exe) | Current-user installation. Run the setup file on a device that permits it. Native portable and installer share the same per-user workspace; they are not isolated test accounts. |
-| Optional browser portable — session only | [Download unsigned browser portable ZIP · 40.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-browser-portable-UNSIGNED-PREVIEW.zip) | Extract the entire ZIP and open `Start FUSE.cmd`. Keep its console open. Uses your browser and a bundled runtime; no global Node.js installation is needed. Closing the console clears connection profiles, credentials and workspace state. Explicitly exported files remain. |
+| RC17 native portable — no installer | [Unsigned portable ZIP · 9.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-native-portable-UNSIGNED-PREVIEW.zip) | Extract the whole ZIP and open FUSE.exe. Requires Microsoft Edge WebView2 Runtime. Saves workspace in your Windows user profile and passwords in Windows Credential Manager, not beside the EXE. |
+| RC17 desktop installer | [Unsigned EXE installer · 7.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-setup-UNSIGNED-PREVIEW.exe) | Current-user installation on a device that permits it. Shares the native portable's per-user workspace. |
 
-File sizes use decimal MB. Choose the native portable first if you do not want to install FUSE. The browser portable is a separate session-only option, not a way around blocked native execution. In GitHub's Assets list, choose the named Windows files above; the automatic “Source code” ZIP/tar.gz contains only this download repository's documents.
+[RC17 release, original checksums and checklist](https://github.com/anandvegaraju/FUSE-Downloads/releases/tag/v1.0.0-rc.17-preview). Its assets are unchanged. The old RC17 browser portable is session-only and lacks the persistence fixes; use RC18 for current browser-portable testing.
 
-## Before you launch
+## Test safely
 
-- FUSE has **no trusted publisher signature** in this preview. Windows, antivirus or an organization policy may warn or block it. If blocked, stop and request approval from the device administrator; do not disable protections, alter execution policy or install a test certificate.
-- Test on an authorized **Windows 11 x64** device as a standard user. Other architectures and older Windows versions are outside this preview's test scope. If a runtime is missing or setup asks for elevation, record that and stop; do not change the device's security configuration.
-- Schema browsing, column suggestions and documentation links can be tested without an Oracle connection. Connected testing needs your own authorized **non-production** Oracle Fusion access. “Save & prepare” can create missing preset FUSE XDM/XDO objects in the configured existing BI Publisher folder; get the environment owner's permission first.
-- Back up important SQL before testing. Portable does not mean the native app leaves no local data. Installer removal must not be assumed to erase the shared workspace or credentials.
-
-## Test and report
-
-Follow the [short Windows 11 checklist](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/WINDOWS-11-TEST-CHECKLIST.md). Return pass/fail/blocked results to the person who shared this preview. Do not share passwords, tenant URLs, personal or business data, sensitive SQL, or raw logs.
-
-The RC17 hosted checks passed native launch, Windows credential-vault operations and installer install/launch/uninstall on Windows Server 2022. Automated tests also passed. **A clean Windows 11 client and your authorized Oracle environment have not yet been accepted**—that is the purpose of this preview. No Store certification or public Store submission is claimed.
+- These previews have **no trusted FUSE publisher signature**. Windows, antivirus or organization policy may warn or block them. If blocked, stop and ask the device administrator. Do not disable protections, change execution policy or install a test certificate.
+- Use an authorized **Windows 11 x64** device as a standard user. No administrator elevation is intended. Other architectures/Windows versions are outside this preview's test scope.
+- Back up important SQL. Browser-portable workspace data lives outside the extracted app folder in your Windows profile. SQL/profile fields are unencrypted; do not embed secrets in SQL. DPAPI passwords are account-bound and are not transferable between PCs. Native storage is separate. Portable does not mean no local data is left behind.
+- Schema browsing, suggestions and documentation links need no Oracle connection. Connected testing needs authorized **non-production** Oracle Fusion access. Save & prepare can create missing preset FUSE XDM/XDO objects in the configured existing BI Publisher folder; obtain the environment owner's permission first.
+- The optional MCP companion exposes schema metadata and reviewed joins, not connections, credentials, SQL drafts, result rows or query execution. Independently granting an agent filesystem access or uploading sensitive material is outside this boundary.
+- Report **Pass / Fail / Blocked / Not tested**, your Windows/browser version and redacted errors. Do not share passwords, tenant URLs, sensitive SQL, result rows or raw logs.
 
 ## Exact-build provenance
 
-These are the unchanged RC17 package bytes, with clearer outer filenames. Compare downloaded SHA-256 values with [SHA256SUMS.txt](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/SHA256SUMS.txt), for example in PowerShell:
+RC18 application source: a53c7f573d2add3dbbb26d2e010b9ec62b88afe0. ZIP SHA-256: cd2aaaf50b8b0ec01505db32e6dc88ab6cfcce122cce8907c5f703db730feaa6. A matching checksum confirms integrity, not publisher trust. RC18 Windows startup, real DPAPI save/restart and live coding-client acceptance remain pending.
 
-```powershell
-Get-FileHash -Algorithm SHA256 -LiteralPath '.\FUSE-1.0.0-rc.17-windows-x64-native-portable-UNSIGNED-PREVIEW.zip'
-```
-
-A matching checksum confirms file integrity, not publisher trust or safety. RC17 is built from application source commit `25a60e6d3db816adcac67b7a1eda28803ee54cee`; this download repository's tag identifies its accompanying documents, not application source. Windows may display the underlying application version as `1.0.0`.
-
-Earlier private-candidate notices remain inside the unchanged ZIPs. The owner subsequently authorized this Windows RC17 evaluation preview on 6 September 2026. That does not represent completed third-party rights review, signing, general-release acceptance, or Microsoft Store approval. No macOS package, MSIX, development certificate, private evidence archive or owner workspace is included here.
+The owner authorized these narrowly labelled Windows testing previews. This is not completed third-party rights review, stable-release approval or Store submission approval. No macOS package, MSIX, test certificate, private evidence archive or owner workspace is published here. Automatic GitHub “Source code” archives contain this download repository's documents, not the FUSE application source. File sizes use decimal MB.

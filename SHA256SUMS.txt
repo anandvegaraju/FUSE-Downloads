@@ -1,3 +1,1 @@
-0c6d8b037a786457d556263428aa1f333948a2ceb564c478f1ab02801ee70162  FUSE-1.0.0-rc.17-windows-x64-native-portable-UNSIGNED-PREVIEW.zip
-5c0ab10089e5d00b9bc59f61741dbe726676637aa5aead63a7ec25c7d092836c  FUSE-1.0.0-rc.17-windows-x64-setup-UNSIGNED-PREVIEW.exe
-9bd795be2b00cdcd740a52fe4cb94439581b09d583ad14eb5f1e4a989a8de6a8  FUSE-1.0.0-rc.17-windows-x64-browser-portable-UNSIGNED-PREVIEW.zip
+cd2aaaf50b8b0ec01505db32e6dc88ab6cfcce122cce8907c5f703db730feaa6 *FUSE-1.0.0-rc.18-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip
