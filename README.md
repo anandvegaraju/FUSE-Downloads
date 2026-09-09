@@ -1,43 +1,30 @@
-# FUSE SQL Studio — Windows testing previews
+# FUSE SQL Studio: Windows testing preview
 
-**Latest app updates: RC18 browser portable · Windows 11 x64 · UNSIGNED TEST PREVIEW**
+**RC19 is the current download. Unsigned, non-production preview for Windows 11 x64.**
 
-RC18 is assembled on macOS and awaits Windows 11 testing. It is not a stable, certified or Microsoft Store release. Downloads are accessible without a GitHub account; FUSE source remains private. This repository contains download information only, not FUSE source or its Git history.
+[Download RC19 browser-portable ZIP](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.19-preview/FUSE-1.0.0-rc.19-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip)
 
-## Updated download — RC18
+[Release notes](https://github.com/anandvegaraju/FUSE-Downloads/releases/tag/v1.0.0-rc.19-preview) · [Windows 11 checklist](WINDOWS-11-TEST-CHECKLIST.md) · [Checksums](SHA256SUMS.txt)
 
-**[Download RC18 browser-portable ZIP · 39.9 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.18-preview/FUSE-1.0.0-rc.18-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip)**
+ZIP size: 39,917,621 bytes. SHA-256: `918d50856ad26583810211b895d62715ffa547c7ce16a4fcbe7c6c3cf01eb99a`.
 
-Extract the entire ZIP into a writable folder and double-click **Start FUSE.cmd**. The Windows runtime is included; no separate Node.js installation is needed. Keep the console open. Wait for **Workspace saved**, close the app window, then close the console.
+## What changed
 
-This preview contains persistent queries/drafts/connection profiles/preferences, Windows account-bound password protection, Edge/Chrome app-window launch, FUSE branding, row caps up to 10,000, stable alphabetical schema browsing and an optional schema-only coding-agent companion. Existing lower row caps are preserved; raise both workspace and connection caps if still limited to 500.
+- Fixed catalog object naming; default Oracle folder `/Custom/FUSE`, with a custom-folder option.
+- Improved bounded recovery for small/wide result requests, including 100 rows. The original tenant failure still needs a retest.
+- Bare-column suggestions insert just the column; explicit alias-dot completion stays scoped.
+- Real SQL files in Documents/FUSE/Queries or a custom folder, nested imports and pinned files/folders. Originals and external edits are not overwritten.
+- Optional human-reviewed MCP creation/run requests, off after each restart. Results stay in FUSE; agents receive status/counts only.
+- Independence and non-production notices in Settings and the package.
 
-**These new Windows behaviors await your test.** The updated app passed Mac-side automated tests, isolated workspace restart and packaged gateway/MCP checks. The bundled Windows Node runtime is unchanged from checksum-verified RC17; this does not sign FUSE or establish RC18 Windows acceptance. RC17 browser-session work already lost cannot be recovered.
+Extract the whole ZIP into a new writable folder. Close the old FUSE window and console after saving, then run **Start FUSE.cmd** from RC19. Your existing RC18 workspace remains in your Windows user profile; do not delete it. Update your coding client's FUSE server entry using the new package's Settings.
 
-[RC18 release notes](https://github.com/anandvegaraju/FUSE-Downloads/releases/tag/v1.0.0-rc.18-preview) · [Windows 11 checklist](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.18-preview/WINDOWS-11-TEST-CHECKLIST.md) · [RC18 checksum](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.18-preview/SHA256SUMS.txt)
+This runs through a local Edge/Chrome app-style window with a default-browser fallback. It is not a native installer. No new RC19 native installer, native portable, macOS or Store package is offered here; older assets remain historical and do not contain these changes.
 
-## Older native downloads — RC17, without the RC18 updates
+## Test boundary
 
-There is **no RC18 native installer, native portable or MSIX yet**. These separate RC17 previews remain available for older-build testing; do not use them to verify RC18 changes.
+The FUSE package is unsigned and was assembled on macOS with unchanged Windows Node runtime bytes from the previous Windows build. Local automated and synthetic UI tests passed; Windows 11, DPAPI, authorized-tenant and real coding-client acceptance for this revision remain required. It is not a signed/stable release or a way around company controls. Do not disable security protections. Ask IT if policy blocks it.
 
-| Package | Download | Start and storage |
-|---|---|---|
-| RC17 native portable — no installer | [Unsigned portable ZIP · 9.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-native-portable-UNSIGNED-PREVIEW.zip) | Extract the whole ZIP and open FUSE.exe. Requires Microsoft Edge WebView2 Runtime. Saves workspace in your Windows user profile and passwords in Windows Credential Manager, not beside the EXE. |
-| RC17 desktop installer | [Unsigned EXE installer · 7.8 MB](https://github.com/anandvegaraju/FUSE-Downloads/releases/download/v1.0.0-rc.17-preview/FUSE-1.0.0-rc.17-windows-x64-setup-UNSIGNED-PREVIEW.exe) | Current-user installation on a device that permits it. Shares the native portable's per-user workspace. |
+Use authorized non-production environments only. FUSE is independent software, not affiliated with, endorsed, sponsored or certified by Oracle, and grants no Oracle license. Oracle is a registered trademark of Oracle and/or its affiliates. Read the bundled legal and dependency notices.
 
-[RC17 release, original checksums and checklist](https://github.com/anandvegaraju/FUSE-Downloads/releases/tag/v1.0.0-rc.17-preview). Its assets are unchanged. The old RC17 browser portable is session-only and lacks the persistence fixes; use RC18 for current browser-portable testing.
-
-## Test safely
-
-- These previews have **no trusted FUSE publisher signature**. Windows, antivirus or organization policy may warn or block them. If blocked, stop and ask the device administrator. Do not disable protections, change execution policy or install a test certificate.
-- Use an authorized **Windows 11 x64** device as a standard user. No administrator elevation is intended. Other architectures/Windows versions are outside this preview's test scope.
-- Back up important SQL. Browser-portable workspace data lives outside the extracted app folder in your Windows profile. SQL/profile fields are unencrypted; do not embed secrets in SQL. DPAPI passwords are account-bound and are not transferable between PCs. Native storage is separate. Portable does not mean no local data is left behind.
-- Schema browsing, suggestions and documentation links need no Oracle connection. Connected testing needs authorized **non-production** Oracle Fusion access. Save & prepare can create missing preset FUSE XDM/XDO objects in the configured existing BI Publisher folder; obtain the environment owner's permission first.
-- The optional MCP companion exposes schema metadata and reviewed joins, not connections, credentials, SQL drafts, result rows or query execution. Independently granting an agent filesystem access or uploading sensitive material is outside this boundary.
-- Report **Pass / Fail / Blocked / Not tested**, your Windows/browser version and redacted errors. Do not share passwords, tenant URLs, sensitive SQL, result rows or raw logs.
-
-## Exact-build provenance
-
-RC18 application source: a53c7f573d2add3dbbb26d2e010b9ec62b88afe0. ZIP SHA-256: cd2aaaf50b8b0ec01505db32e6dc88ab6cfcce122cce8907c5f703db730feaa6. A matching checksum confirms integrity, not publisher trust. RC18 Windows startup, real DPAPI save/restart and live coding-client acceptance remain pending.
-
-The owner authorized these narrowly labelled Windows testing previews. This is not completed third-party rights review, stable-release approval or Store submission approval. No macOS package, MSIX, test certificate, private evidence archive or owner workspace is published here. Automatic GitHub “Source code” archives contain this download repository's documents, not the FUSE application source. File sizes use decimal MB.
+This repository contains download documentation and preview assets, not the private application source. No telemetry or AI provider integration is added by FUSE. Your coding agent's independently granted file access and provider handling are outside FUSE's control.
