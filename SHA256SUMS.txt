@@ -1,1 +1,1 @@
-918d50856ad26583810211b895d62715ffa547c7ce16a4fcbe7c6c3cf01eb99a *FUSE-1.0.0-rc.19-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip
+165e6a6550db81969ab8b96e01aa970e1669f82f0f632ae3bf39bc16e3c7cbf4 *FUSE-1.0.0-rc.20-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip
