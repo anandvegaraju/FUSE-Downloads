@@ -6,14 +6,14 @@
 
 [Release notes](https://github.com/anandvegaraju/FUSE-Downloads/releases/tag/v1.0.0-rc.21-preview) · [Windows 11 checklist](WINDOWS-11-TEST-CHECKLIST.md) · [Checksums](SHA256SUMS.txt)
 
-ZIP size: 39,926,649 bytes. SHA-256: `0e342b1326b4849c04c27f586587ca28cfe487922629569db1545aff173a288f`.
+ZIP size: 39,926,848 bytes. SHA-256: `87bb258e52e08c92eb196bbeca191677ddd4e85c4b3eb6fbf9e388445ea2955b`.
 
 ## What changed
 
 - Query toolbar actions remain reachable in narrower windows, including Format, Save as and the row safety cap.
 - Schema details have full primary keys, readable narrow-window columns, sticky column search and sensible detail scrolling without reordering the table list.
 - Relationship paths, join explanations, source links and SQL previews are more readable through the lower sections.
-- Settings retains five clear categories and consistent cards; category changes start at the top while unfinished SQL-folder edits survive.
+- Settings retains five clear categories and consistent cards; category changes start at the top while unfinished SQL-folder edits survive. A lower-section overflow fix keeps the outer window stable.
 - The library has a collapsible SQL import section, clearer empty/search states and keyboard-visible menus. Dialogs and the command palette have improved readability and navigation.
 - MCP setup remains guided and optional. Fresh setup fixes canonical bridge paths; error dismissal does not retry an action. Creation/execution start off and every request needs approval. Results stay in FUSE; agents receive status/counts only.
 - RC19 connection, file saving/import, persistence and completion improvements remain included. The owner's core RC19 Windows acceptance is not automatically RC21 acceptance.
@@ -24,7 +24,7 @@ This runs through a local Edge/Chrome app-style window with a default-browser fa
 
 ## Test boundary
 
-The FUSE package is unsigned and was assembled on macOS with unchanged Windows Node runtime bytes from the previous Windows build. Local checks passed: 242 JavaScript tests, 67 Rust library tests, the end-to-end UI flow, packaged gateway/schema/optional-request checks and full npm dependency audit (zero vulnerabilities). One actual-Windows-DPAPI test was skipped on Mac; Windows 11 visual/scaling, clipboard, regression and real coding-client acceptance for this revision remain required. No Windows binary execution or fresh independent DPAPI evidence is implied by the Mac checks. It is not a signed/stable release or a way around company controls. Do not disable security protections. Ask IT if policy blocks it.
+The FUSE package is unsigned and was assembled on macOS with unchanged Windows Node runtime bytes from the previous Windows build. Local checks passed: 243 JavaScript tests, 67 Rust library tests, the end-to-end UI flow, packaged gateway/schema/optional-request checks and full npm dependency audit (zero vulnerabilities). One actual-Windows-DPAPI test was skipped on Mac; Windows 11 visual/scaling, clipboard, regression and real coding-client acceptance for this revision remain required. No Windows binary execution or fresh independent DPAPI evidence is implied by the Mac checks. It is not a signed/stable release or a way around company controls. Do not disable security protections. Ask IT if policy blocks it.
 
 Use authorized non-production environments only. FUSE is independent software, not affiliated with, endorsed, sponsored or certified by Oracle, and grants no Oracle license. Oracle is a registered trademark of Oracle and/or its affiliates. Read the bundled legal and dependency notices.
 

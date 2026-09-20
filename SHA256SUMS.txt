@@ -1,1 +1,1 @@
-0e342b1326b4849c04c27f586587ca28cfe487922629569db1545aff173a288f *FUSE-1.0.0-rc.21-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip
+87bb258e52e08c92eb196bbeca191677ddd4e85c4b3eb6fbf9e388445ea2955b *FUSE-1.0.0-rc.21-windows-x64-browser-portable-UNSIGNED-TEST-PREVIEW.zip
